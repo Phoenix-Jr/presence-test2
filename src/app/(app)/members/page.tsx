@@ -247,7 +247,7 @@ export default function MembersPage() {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <Select value={genderFilter} onValueChange={setGenderFilter}>
+        <Select value={genderFilter} onValueChange={(v) => setGenderFilter(v ?? 'all')}>
           <SelectTrigger className="w-32">
             <SelectValue placeholder="Gender" />
           </SelectTrigger>
@@ -257,7 +257,7 @@ export default function MembersPage() {
             <SelectItem value="female">Female</SelectItem>
           </SelectContent>
         </Select>
-        <Select value={statusFilter} onValueChange={setStatusFilter}>
+        <Select value={statusFilter} onValueChange={(v) => setStatusFilter(v ?? 'all')}>
           <SelectTrigger className="w-32">
             <SelectValue placeholder="Status" />
           </SelectTrigger>
